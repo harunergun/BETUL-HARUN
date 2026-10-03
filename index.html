@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>BETÜL ❤️ HARUN</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   GENEL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe4ec 0%,
+            #f6e6f5 50%,
+            #fff5f8 100%
+        );
+
+    color: #4b3940;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HAREKETLİ ÇİÇEKLER
+========================= */
+
+#falling {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+.falling-item {
+
+    position: absolute;
+
+    top: -50px;
+
+    animation:
+        falling linear infinite;
+
+    opacity: 0.65;
+}
+
+@keyframes falling {
+
+    0% {
+        transform:
+            translateY(-50px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    85% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   ANA ALAN
+========================= */
+
+#site {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    padding:
+        25px
+        15px
+        80px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   BAŞLIK
+========================= */
+
+.hero {
+
+    text-align: center;
+
+    padding:
+        55px
+        20px;
+
+    background:
+        rgba(255,255,255,0.88);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(0,0,0,0.06);
+
+    margin-bottom: 25px;
+
+    animation:
+        appear 1s ease;
+}
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+.hero h1 {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 4.5rem;
+
+    color: #b95778;
+
+    line-height: 1.2;
+}
+
+.hero p {
+
+    font-family:
+        'Dancing Script',
+        cursive;
+
+    font-size: 1.5rem;
+
+    color: #777;
+
+    margin-top: 10px;
+}
+
+.hero .flowers {
+
+    font-size: 2rem;
+
+    margin-top: 18px;
+}
+
+
+/* =========================
+   KARTLAR
+========================= */
+
+.card {
+
+    background:
+        rgba(255,255,255,0.9);
+
+    border-radius: 25px;
+
+    padding:
+        30px
+        20px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(0,0,0,0.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.8);
+}
+
+.title {
+
+    text-align: center;
+
+    font-family:
+        'Dancing Script',
+        cursive;
+
+    font-size: 2rem;
+
+    color: #c46382;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   SAYAÇ
+========================= */
+
+.date {
+
+    text-align: center;
+
+    font-size: 0.85rem;
+
+    color: #999;
+
+    margin-bottom: 18px;
+}
+
+.counter {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.time {
+
+    background:
+        #fff4f7;
+
+    border:
+        1px solid
+        #f4cedb;
+
+    border-radius: 15px;
+
+    padding:
+        15px 5px;
+
+    text-align: center;
+}
+
+.time strong {
+
+    display: block;
+
+    font-size: 1.5rem;
+
+    color: #b95778;
+}
+
+.time span {
+
+    display: block;
+
+    font-size: 0.7rem;
+
+    color: #888;
+
+    margin-top: 3px;
+}
+
+
+/* =========================
+   FOTOĞRAF ALBÜMÜ
+========================= */
+
+.photo-box {
+
+    width: 100%;
+
+    height: 430px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #eee;
+
+    box-shadow:
+        0 8px 20px
+        rgba(0,0,0,0.08);
+}
+
+.photo-box img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+.photo-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.circle-btn {
+
+    width: 45px;
+
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        #c46382;
+
+    color: white;
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(190,80,120,0.3);
+
+    transition:
+        transform 0.15s;
+}
+
+.circle-btn:active {
+
+    transform:
+        scale(0.9);
+}
+
+.caption {
+
+    flex: 1;
+
+    text-align: center;
+
+    font-family:
+        'Dancing Script',
+        cursive;
+
+    font-size: 1.2rem;
+
+    color: #777;
+}
+
+.photo-count {
+
+    text-align: center;
+
+    color: #aaa;
+
+    font-size: 0.75rem;
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   NOKTALAR
+========================= */
+
+.dots {
+
+    text-align: center;
+
+    margin-top: 12px;
+}
+
+.dot {
+
+    display: inline-block;
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+        #e5b4c3;
+
+    margin: 3px;
+
+    cursor: pointer;
+
+    transition:
+        0.2s;
+}
+
+.dot.active {
+
+    background:
+        #b95778;
+
+    transform:
+        scale(1.4);
+}
+
+
+/* =========================
+   MEKTUP
+========================= */
+
+.letter {
+
+    background:
+        #fffdf8;
+
+    border-left:
+        5px solid
+        #d47794;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    line-height: 1.9;
+
+    white-space: pre-line;
+
+    font-family:
+        'Dancing Script',
+        cursive;
+
+    font-size: 1.25rem;
+
+    color: #5b4b50;
+}
+
+
+/* =========================
+   PUZZLE
+========================= */
+
+.puzzle-info {
+
+    text-align: center;
+
+    font-size: 0.8rem;
+
+    color: #888;
+
+    margin-bottom: 15px;
+}
+
+#puzzle {
+
+    width: 330px;
+
+    height: 330px;
+
+    max-width: 100%;
+
+    margin: auto;
+
+    padding: 3px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 3px;
+
+    background:
+        #edb6c6;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+}
+
+.tile {
+
+    width: 30%;
+
+    height: 30%;
+
+    background-image:
+        url("foto6.jpeg");
+
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+
+    border-radius: 4px;
+
+    transition:
+        transform 0.2s,
+        outline 0.2s;
+}
+
+.tile.selected {
+
+    outline:
+        4px solid
+        #b95778;
+
+    transform:
+        scale(0.93);
+
+    z-index: 2;
+}
+
+
+/* =========================
+   MÜZİK
+========================= */
+
+<section class="card">
+
+    <div class="title">
+        🎵 Bizim Şarkımız
+    </div>
+
+    <div class="music-player">
+
+        <button
+            class="music-button"
+            id="musicButton"
+            type="button">
+            ▶
+        </button>
+
+        <div class="song-name">
+            Ahmet Kaya - Söyle
+        </div>
+
+        <div class="song-sub">
+            Seninle daha güzel... ❤️
+        </div>
+
+        <audio id="music" preload="auto" loop>
+            <source src="./soyle.mp3" type="audio/mpeg">
+            Tarayıcınız ses dosyasını desteklemiyor.
+        </audio>
+
+    </div>
+
+</section>
+}
+
+
+/* =========================
+   ALT KISIM
+========================= */
+
+.final {
+
+    text-align: center;
+
+    padding: 35px 15px;
+}
+
+.final h2 {
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 3.5rem;
+
+    color: #b95778;
+}
+
+.final p {
+
+    font-family:
+        'Dancing Script',
+        cursive;
+
+    font-size: 1.4rem;
+
+    color: #777;
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   MOBİL
+========================= */
+
+@media (max-width: 500px) {
+
+    #site {
+
+        padding:
+            15px
+            10px
+            60px;
+    }
+
+    .hero {
+
+        padding:
+            45px
+            15px;
+    }
+
+    .hero h1 {
+
+        font-size: 3.5rem;
+    }
+
+    .hero p {
+
+        font-size: 1.2rem;
+    }
+
+    .counter {
+
+        gap: 6px;
+    }
+
+    .time {
+
+        padding:
+            12px
+            3px;
+    }
+
+    .time strong {
+
+        font-size: 1.15rem;
+    }
+
+    .time span {
+
+        font-size: 0.6rem;
+    }
+
+    .photo-box {
+
+        height: 380px;
+    }
+
+    #puzzle {
+
+        width: 300px;
+
+        height: 300px;
+    }
+
+    .letter {
+
+        font-size: 1.15rem;
+
+        padding: 20px;
+    }
+
+    .final h2 {
+
+        font-size: 3rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     ÇİÇEKLER
+========================= -->
+
+<div id="falling"></div>
+
+
+<!-- =========================
+     ANA SİTE
+========================= -->
+
+<div id="site">
+
+
+<!-- =========================
+     BAŞLIK
+========================= -->
+
+<section class="hero">
+
+    <h1>
+        BETÜL & HARUN
+    </h1>
+
+    <p>
+        Sen hep kalbimin en güzel yerindesin. ❤️
+    </p>
+
+    <div class="flowers">
+        🌸 ❤️ 🌸
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SAYAÇ
+========================= -->
+
+<section class="card">
+
+    <div class="title">
+        ✨ Tanıştığımızdan Beri ✨
+    </div>
+
+    <div class="date">
+        26 Ağustos 2026 ❤️
+    </div>
+
+    <div class="counter">
+
+        <div class="time">
+
+            <strong id="days">
+                0
+            </strong>
+
+            <span>
+                GÜN
+            </span>
+
+        </div>
+
+
+        <div class="time">
+
+            <strong id="hours">
+                0
+            </strong>
+
+            <span>
+                SAAT
+            </span>
+
+        </div>
+
+
+        <div class="time">
+
+            <strong id="minutes">
+                0
+            </strong>
+
+            <span>
+                DAKİKA
+            </span>
+
+        </div>
+
+
+        <div class="time">
+
+            <strong id="seconds">
+                0
+            </strong>
+
+            <span>
+                SANİYE
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOTOĞRAF ALBÜMÜ
+========================= -->
+
+<section class="card">
+
+    <div class="title">
+        📖 Bizim Anılarımız
+    </div>
+
+    <div class="photo-box">
+
+        <img
+            id="albumPhoto"
+            src="foto.jpeg"
+            alt="Betül ve Harun"
+        >
+
+    </div>
+
+
+    <div class="photo-controls">
+
+        <button
+            class="circle-btn"
+            onclick="previousPhoto()">
+
+            ❮
+
+        </button>
+
+
+        <div
+            class="caption"
+            id="caption">
+
+            Güzel anılarımızdan biri ❤️
+
+        </div>
+
+
+        <button
+            class="circle-btn"
+            onclick="nextPhoto()">
+
+            ❯
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="photo-count"
+        id="photoCount">
+
+        1 / 9
+
+    </div>
+
+
+    <div
+        class="dots"
+        id="dots">
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PUZZLE
+========================= -->
+
+<section class="card">
+
+    <div class="title">
+        🧩 Fotoğrafımız
+    </div>
+
+    <div class="puzzle-info">
+
+        Parçalara dokunarak yerlerini
+        değiştir ve fotoğrafı tamamla ❤️
+
+    </div>
+
+
+    <div id="puzzle">
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MEKTUP
+========================= -->
+
+<section class="card">
+
+    <div class="title">
+        ✉️ Sana Mektubum
+    </div>
+
+
+    <div class="letter">
+
+Betül,
+
+Bazen düşünüyorum da, seni sevmek sadece seni sevmek değilmiş. Gün içinde aklıma gelen bir şarkıda, gördüğüm güzel bir yerde, ettiğim bir duada, sana anlatmak için biriktirdiğim en küçük şeyde bile sen varsın.
+
+Sen bana sadece bugünümü değil, geleceğimi de düşündüren birisin. Birlikte daha çok yol yürümeyi, daha çok şey yaşamayı, bazen hiçbir şey yapmadan yan yana oturmayı, beraber gülmeyi, birbirimize sarılmayı ve dönüp ( iyi kiiii) demeyi istiyorum.
+
+Senin bana anlattığın o küçük kız çocuğunu da seviyorum. Belki o yüzden sana baktığımda sadece bugünkü seni değil, geçmişinden bugüne taşıdığın bütün güzellikleri görüyorum. Ve her geçen gün o güzelliklerin biraz daha fazlasına hayran oluyorum.
+
+Mesafeler oluyor, özlüyoruz, bazen konuşamıyoruz ama bütün bunların içinde değişmeyen bir şey var ben seni hayatımın içinde istiyorum. Hem de öylesine değil… dualarımın içinde, planlarımın içinde, yarınlarımın içinde herşeyimdee
+
+Yine o kavuşma anı gelince seni gördüğüm ilk saniyede bütün bu özlem bitecek ve her defasında koşa koşa bana geldiğin görüntü aklıma gelicek . O an sana sarıldığımda içimden sadece “işte bu” diyicem. Çünkü ben seni özlerken aslında hep o ana kavuşmayı özlüyorum.
+
+İyi ki karşıma çıktın güzelim. İyi ki kalbimde sana ayırdığım yer, her geçen gün biraz daha büyüyor. Seni her geçen gün daha çok seviyorum ve galiba bunun bir sınırı yok. ❤️
+Seni çok seviyorum. ❤️
+
+BAL'INN 
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MÜZİK
+========================= -->
+
+<section class="card">
+
+    <div class="title">
+        🎵 Bizim Şarkımız
+    </div>
+
+
+    <div class="music-player">
+
+        <button
+            class="music-button"
+            id="musicButton"
+            onclick="toggleMusic()">
+
+            ▶
+
+        </button>
+
+
+        <div class="song-name">
+
+            Ahmet Kaya - Söyle
+
+        </div>
+
+
+        <div class="song-sub">
+
+Bu şarkıyı söylediğinden beri aklıma hep sen geliyorsun.
+Çünkü bazı şarkılar sadece dinlenmez, bazıları birini özlerken yaşanır.
+Biz de seni özlediğim her an, aramızdaki mesafeyi biraz olsun unutturması için bu şarkıya sığınıyoruz.
+
+Belki şu an yan yana değiliz ama bil ki kalbimin en yakın yerindesin.
+Seni özlemek zor, ama seni sevmek her şeye değer.
+Bir gün bu şarkıyı özlemle değil, birbirimize sarılarak dinleyeceğimiz günlere… ❤️
+
+        </div>
+
+
+        <audio
+            id="music"
+            loop>
+
+            <source
+                src="soyle.mp3"
+                type="audio/mpeg">
+
+        </audio>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SON
+========================= -->
+
+<section class="final">
+
+    <h2>
+        Sonsuza Dek ❤️
+    </h2>
+
+    <p>
+        BETÜL + HARUN = BİZ
+    </p>
+
+    <div
+        style="
+        font-size:2rem;
+        margin-top:15px;">
+        🌸 💕 🌸
+    </div>
+
+</section>
+
+
+</div>
+
+
+<script>
+
+
+/* =====================================
+   1. TANIŞMA TARİHİ
+===================================== */
+
+const startDate =
+    new Date("2026-08-26T00:00:00");
+
+
+/* =====================================
+   2. SAYAÇ
+===================================== */
+
+function updateCounter() {
+
+    const now =
+        new Date();
+
+    const difference =
+        now.getTime()
+        -
+        startDate.getTime();
+
+
+    if (difference < 0) {
+
+        document.getElementById("days")
+            .innerText = "0";
+
+        document.getElementById("hours")
+            .innerText = "0";
+
+        document.getElementById("minutes")
+            .innerText = "0";
+
+        document.getElementById("seconds")
+            .innerText = "0";
+
+        return;
+    }
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (
+                difference %
+                (1000 * 60 * 60 * 24)
+            )
+            /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (
+                difference %
+                (1000 * 60 * 60)
+            )
+            /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (
+                difference %
+                (1000 * 60)
+            )
+            /
+            1000
+        );
+
+
+    document.getElementById("days")
+        .innerText = days;
+
+    document.getElementById("hours")
+        .innerText = hours;
+
+    document.getElementById("minutes")
+        .innerText = minutes;
+
+    document.getElementById("seconds")
+        .innerText = seconds;
+}
+
+
+updateCounter();
+
+setInterval(
+    updateCounter,
+    1000
+);
+
+
+/* =====================================
+   3. FOTOĞRAFLAR
+===================================== */
+
+const photos = [
+
+    {
+        url: "foto.jpeg",
+        caption:
+            "ilk el ele tutuştuğumuz yerr ❤️"
+    },
+
+    {
+        url: "foto1.jpeg",
+        caption:
+            "Birlikte çok güzeliz ✨"
+    },
+
+    {
+        url: "foto2.jpeg",
+        caption:
+            "Seninle her şey daha güzel 💕"
+    },
+
+    {
+        url: "foto3.jpeg",
+        caption:
+            "Birlikte geçirdiğimiz güzel anlardan biri 🌸"
+    },
+
+    {
+        url: "foto4.jpeg",
+        caption:
+            "herşey burada başladı ❤️"
+    },
+
+    {
+        url: "foto5.jpeg",
+        caption:
+            " veee ilk gelişim ✨"
+    },
+
+    {
+        url: "foto6.jpeg",
+        caption:
+            "Hep yan yana, hep beraber 💕"
+    },
+
+    {
+        url: "foto7.jpeg",
+        caption:
+            "Bizim en güzel anlarımızdan biri 🌸"
+    },
+
+    {
+        url: "foto8.jpeg",
+        caption:
+            "Sonsuza kadar el ele ❤️"
+    }
+
+];
+
+
+let currentPhoto = 0;
+
+
+/* =====================================
+   4. FOTOĞRAF GÖSTER
+===================================== */
+
+function showPhoto(index) {
+
+    const image =
+        document.getElementById(
+            "albumPhoto"
+        );
+
+    const caption =
+        document.getElementById(
+            "caption"
+        );
+
+    const count =
+        document.getElementById(
+            "photoCount"
+        );
+
+
+    image.style.opacity = "0";
+
+
+    setTimeout(
+        function() {
+
+            image.src =
+                photos[index].url;
+
+            caption.innerText =
+                photos[index].caption;
+
+            count.innerText =
+                `${index + 1} / ${photos.length}`;
+
+            image.style.opacity = "1";
+
+        },
+        200
+    );
+
+
+    updateDots();
+}
+
+
+/* =====================================
+   5. SONRAKİ FOTOĞRAF
+===================================== */
+
+function nextPhoto() {
+
+    currentPhoto++;
+
+    if (
+        currentPhoto >=
+        photos.length
+    ) {
+
+        currentPhoto = 0;
+    }
+
+    showPhoto(
+        currentPhoto
+    );
+}
+
+
+/* =====================================
+   6. ÖNCEKİ FOTOĞRAF
+===================================== */
+
+function previousPhoto() {
+
+    currentPhoto--;
+
+    if (
+        currentPhoto < 0
+    ) {
+
+        currentPhoto =
+            photos.length - 1;
+    }
+
+    showPhoto(
+        currentPhoto
+    );
+}
+
+
+/* =====================================
+   7. FOTOĞRAF NOKTALARI
+===================================== */
+
+function createDots() {
+
+    const dots =
+        document.getElementById(
+            "dots"
+        );
+
+
+    dots.innerHTML = "";
+
+
+    photos.forEach(
+        function(photo, index) {
+
+            const dot =
+                document.createElement(
+                    "span"
+                );
+
+
+            dot.className =
+                "dot";
+
+
+            dot.onclick =
+                function() {
+
+                    currentPhoto =
+                        index;
+
+                    showPhoto(
+                        index
+                    );
+
+                };
+
+
+            dots.appendChild(
+                dot
+            );
+
+        }
+    );
+
+
+    updateDots();
+}
+
+
+function updateDots() {
+
+    const dots =
+        document.querySelectorAll(
+            ".dot"
+        );
+
+
+    dots.forEach(
+        function(dot, index) {
+
+            if (
+                index === currentPhoto
+            ) {
+
+                dot.classList.add(
+                    "active"
+                );
+
+            } else {
+
+                dot.classList.remove(
+                    "active"
+                );
+
+            }
+
+        }
+    );
+}
+
+
+/* =====================================
+   8. PUZZLE
+===================================== */
+
+let tiles = [
+
+    0, 1, 2,
+    3, 4, 5,
+    6, 7, 8
+
+];
+
+
+let selectedTile = null;
+
+
+function createPuzzle() {
+
+    tiles =
+        [
+            0,1,2,
+            3,4,5,
+            6,7,8
+        ];
+
+
+    /* Karıştır */
+
+    for (
+        let i = tiles.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const random =
+            Math.floor(
+                Math.random() *
+                (i + 1)
+            );
+
+
+        [
+            tiles[i],
+            tiles[random]
+        ] =
+        [
+            tiles[random],
+            tiles[i]
+        ];
+
+    }
+
+
+    selectedTile = null;
+
+    drawPuzzle();
+}
+
+
+function drawPuzzle() {
+
+    const puzzle =
+        document.getElementById(
+            "puzzle"
+        );
+
+
+    puzzle.innerHTML = "";
+
+
+    tiles.forEach(
+        function(position, index) {
+
+            const tile =
+                document.createElement(
+                    "div"
+                );
+
+
+            tile.className =
+                "tile";
+
+
+            if (
+                selectedTile === index
+            ) {
+
+                tile.classList.add(
+                    "selected"
+                );
+
+            }
+
+
+            const row =
+                Math.floor(
+                    position / 3
+                );
+
+
+            const column =
+                position % 3;
+
+
+            /*
+              Puzzle alanı 330px.
+              Her parça yaklaşık 110px.
+            */
+
+            tile.style.backgroundPosition =
+                `-${column * 110}px -${row * 110}px`;
+
+
+            tile.onclick =
+                function() {
+
+                    puzzleClick(
+                        index
+                    );
+
+                };
+
+
+            puzzle.appendChild(
+                tile
+            );
+
+        }
+    );
+}
+
+
+function puzzleClick(index) {
+
+    if (
+        selectedTile === null
+    ) {
+
+        selectedTile =
+            index;
+
+    } else {
+
+        const temp =
+            tiles[selectedTile];
+
+
+        tiles[selectedTile] =
+            tiles[index];
+
+
+        tiles[index] =
+            temp;
+
+
+        selectedTile =
+            null;
+    }
+
+
+    drawPuzzle();
+}
+
+
+/* =====================================
+   9. MÜZİK
+===================================== */
+
+function toggleMusic() {
+
+    const music =
+        document.getElementById(
+            "music"
+        );
+
+
+    const button =
+        document.getElementById(
+            "musicButton"
+        );
+
+
+    if (
+        music.paused
+    ) {
+
+        music.play()
+            .then(
+                function() {
+
+                    button.innerText =
+                        "⏸";
+
+                }
+            )
+            .catch(
+                function() {
+
+                    alert(
+                        "Müzik dosyası bulunamadı. " +
+                        "soyle.mp3 dosyasının index.html ile aynı klasörde olduğundan emin ol."
+                    );
+
+                }
+            );
+
+    } else {
+
+        music.pause();
+
+        button.innerText =
+            "▶";
+
+    }
+}
+
+
+/* =====================================
+   10. ÇİÇEK / KALP ANİMASYONU
+===================================== */
+
+function createFallingItems() {
+
+    const container =
+        document.getElementById(
+            "falling"
+        );
+
+
+    const symbols = [
+        "🌸",
+        "💕",
+        "❤️",
+        "🌷"
+    ];
+
+
+    for (
+        let i = 0;
+        i < 25;
+        i++
+    ) {
+
+        const item =
+            document.createElement(
+                "div"
+            );
+
+
+        item.className =
+            "falling-item";
+
+
+        item.innerText =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        item.style.left =
+            Math.random() *
+            100 +
+            "%";
+
+
+        item.style.fontSize =
+            (
+                12 +
+                Math.random() * 15
+            ) +
+            "px";
+
+
+        item.style.animationDuration =
+            (
+                7 +
+                Math.random() * 8
+            ) +
+            "s";
+
+
+        item.style.animationDelay =
+            Math.random() * 8 +
+            "s";
+
+
+        container.appendChild(
+            item
+        );
+
+    }
+}
+
+
+/* =====================================
+   11. SAYFA BAŞLAT
+===================================== */
+
+createDots();
+
+showPhoto(0);
+
+createPuzzle();
+
+createFallingItems();
+
+
+</script>
+
+</body>
+</html>
